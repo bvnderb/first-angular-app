@@ -19,6 +19,8 @@ export class UserComponent {
   }
 
   onSelectUser() {
-    console.log('Clicked!');
+    // console.log('Clicked!');
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length); // changes the randomIndex everytime the button is clicked
+    this.selectedUser = DUMMY_USERS[randomIndex];
   }
 }
