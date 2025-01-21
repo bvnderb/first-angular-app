@@ -1,6 +1,19 @@
 <div>
-    <button>
-        <img src />
-        <span>NAME</span>
+    <button (click)="onSelectUser()">
+        <!-- the example below is using property binding -->
+        <!-- <img [src]="'assets/users/' + selectedUser.avatar" [alt]="selectedUser.name" /> -->
+
+        <!-- however for computing values such as the avatar property of the selecteduser and the fixed string
+        best practice is to keep your dynamic template code as simple as possible and instead do the computing using ts. -->
+        <img 
+        [src]="imagePath" 
+        [alt]="selectedUser.name" 
+        />
+
+        <!-- the double curly bracers declare a string interpolation => this allows you to reference any PUBLIC property of your component -->
+        <span>{{ selectedUser.name }}</span>
+
+        <!-- for images this is ideally not done using string interpolation -->
+        <!-- <img src="{{ selectedUser.avatar }}" /> -->
     </button>
 </div>
