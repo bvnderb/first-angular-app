@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core';
-import { DUMMY_USERS } from '../user/dummy-users';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tasks',
@@ -8,8 +7,6 @@ import { DUMMY_USERS } from '../user/dummy-users';
   styleUrl: './tasks.component.css',
 })
 export class TasksComponent {
-
-    name = DUMMY_USERS.find(user => user.id === selectedUserId)!
-
+  @Input({ required: true }) name!: string;
 
     }
